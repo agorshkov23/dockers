@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  portainer:
+    image: portainer/portainer
+    ports:
+      - {published: 9000, target: 9000, protocol: tcp, mode: host}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer:/data
+
+volumes:
+  portainer: {}
